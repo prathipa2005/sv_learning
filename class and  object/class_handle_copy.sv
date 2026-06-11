@@ -1,5 +1,7 @@
+//*************************************************************
 // File : Handle_copy.sv
 // Description : Demonstration of the class handle copy
+//************************************************************
 
 
 class mypkt;
