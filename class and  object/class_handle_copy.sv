@@ -13,6 +13,7 @@ module tb();
 		pkt=new();
 
 		if(pkt==null)
+        
 			$display("Still obbject is not created");
 		else
 			$display("Object is created and pointing the property in the  class");
