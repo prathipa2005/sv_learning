@@ -40,7 +40,7 @@ initial begin
 	sc=new(16'hface,16'haaaa);
 	bc=sc; //assign the subclass handle to the base class handle
 
-	bc.display(); // child class display function is executed using the base class handle becz the method in baseclass is virtual
+	bc.display(); // Dynamic Binding : child class display function is executed using the base class handle becz the method in baseclass is virtual
 end
 endmodule
 
