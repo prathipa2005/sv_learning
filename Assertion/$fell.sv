@@ -1,6 +1,6 @@
 //******************************************************************
-// File :  $rose in Assertion.sv
-// Description : Demonstration of the $rose function example
+// File :  $fell in Assertion.sv
+// Description : Demonstration of the $fell function example
 //******************************************************************
 
 
@@ -11,25 +11,25 @@ module tb;
     always #5 clk = ~clk;
     
     initial begin
-        req = 0;
+        req = 1;
         grant = 0;
 
-        @(posedge clk)
-        req = 1;
+        @(posedge clk);
+        req = 0;
 
-        @(posedge clk)
-        grant = 1;
+        @(posedge clk);
+        grant = 0;      //assertion fail
 
-        @(posedge clk)
-        @(posedge clk)
+        @(posedge clk);
+        @(posedge clk);
         $finish;
 
     end
 
     property transfer;
         @(posedge clk)
-        $rose(req) |=> grant;  //$rose check the rising edge of the req 
-        //that is the transition from 0 to 1
+        $fell(req) |=> grant;  //$fell check the falling edge of the req 
+        //that is the transition from 1 to 0
     endproperty
 
     assert property(transfer)

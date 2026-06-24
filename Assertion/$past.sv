@@ -1,26 +1,27 @@
+
 //******************************************************************
-// File :  $rose in Assertion.sv
-// Description : Demonstration of the $rose function example
+// File :  $past in Assertion.sv
+// Description : Demonstration of the $past function example
 //******************************************************************
 
 
 module tb;
-    bit req,grant;
+    bit start,data;
     bit clk = 0;
 
     always #5 clk = ~clk;
     
     initial begin
-        req = 0;
-        grant = 0;
+        start = 0;
+        data = 0;
 
         @(posedge clk)
-        req = 1;
+        start = 1;
+        data = 1;
 
         @(posedge clk)
-        grant = 1;
-
         @(posedge clk)
+      
         @(posedge clk)
         $finish;
 
@@ -28,8 +29,7 @@ module tb;
 
     property transfer;
         @(posedge clk)
-        $rose(req) |=> grant;  //$rose check the rising edge of the req 
-        //that is the transition from 0 to 1
+        start |-> $past(data);  
     endproperty
 
     assert property(transfer)
