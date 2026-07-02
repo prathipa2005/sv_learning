@@ -3,6 +3,7 @@
 // Description : Demonstration of the Static method
 //******************************************************************
 
+
 class example;
 	static int cnt;
 	

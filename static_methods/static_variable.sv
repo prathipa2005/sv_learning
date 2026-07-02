@@ -3,7 +3,6 @@
 // Description : Demonstration of the Static variable
 //******************************************************************
 
-
 class example;
 	static int cnt_s;
 	int cnt;
