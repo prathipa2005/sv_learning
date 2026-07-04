@@ -11,11 +11,12 @@ module tb;
     fork
       producer();
       consumer();
+      consumer();
     join
   end
 
   task producer();
-    for(int i=1; i<=3; i++) begin
+    for(int i=1; i<=6; i++) begin
       $display("[%0t] Producer trying to put %0d", $time, i);
       mbx.put(i);
       $display("[%0t] Producer put %0d", $time, i);
