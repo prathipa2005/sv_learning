@@ -1,5 +1,5 @@
 //*********************************************************************************
-// File        : Mailbox_bounded.sv
+// File        : Mailbox_Multiple_consumer.sv
 // Description : Demonstrates blocking put() operation in a bounded mailbox.
 //*********************************************************************************
 
