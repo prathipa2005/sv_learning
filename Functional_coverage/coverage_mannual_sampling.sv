@@ -29,3 +29,8 @@ module tb;
   end
     
 endmodule
+
+// Observation:
+// In manual sampling, sample() must be called whenever a value needs to be
+// recorded. Changing the signal without calling sample() does not contribute
+// to functional coverage.

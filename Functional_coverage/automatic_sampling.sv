@@ -50,3 +50,8 @@ cover_a cp;
  
     
 endmodule
+
+// Observation:
+// In automatic sampling, the covergroup samples the coverpoint only at the
+// specified event (posedge clk). Intermediate value changes between sampling
+// events are not recorded.

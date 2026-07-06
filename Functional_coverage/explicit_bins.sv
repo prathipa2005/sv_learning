@@ -47,3 +47,8 @@ cover_a cp;
  
     
 endmodule
+
+// Observation:
+// Functional coverage is calculated based on the number of covered bins,
+// not on the number of individual values sampled. A single sampled value is
+// sufficient to cover its corresponding user-defined bin.
