@@ -83,3 +83,13 @@ module  tb;
 // 5. Coverage increases only when a previously uncovered bin is hit. Sampling
 //    the same value multiple times does not increase the coverage.
 //*********************************************************************************************************************************************************************************
+
+//*********************************************************************************
+// Experimental Observation
+// ------------------------
+// The 'default' bin is used to collect values that do not match any explicit bin.
+// However, it is NOT considered when calculating the total number of coverage bins.
+//
+// Therefore, hitting or not hitting the default bin does not affect the coverage
+// percentage. Only explicit bins contribute to the coverage calculation.
+//*********************************************************************************
