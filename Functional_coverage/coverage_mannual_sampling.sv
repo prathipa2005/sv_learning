@@ -12,8 +12,9 @@ module tb;
   endgroup
   
   initial begin
-   cover_a cp = new();	
-    a = 0;
+   cover_a cp = new();
+   cp.sample(); // it samples the value 0	
+    a = 1;
      $display("a = %0d at [%0t]",a,$time);
     cp.sample();
      a = 1;
