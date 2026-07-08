@@ -31,10 +31,26 @@ class subclass extends baseclass;
 
 endclass
 
+class subclass_a extends baseclass;
+	bit[15:0]addr;
+
+	function new(bit[15:0] data,bit [15:0] addr);
+		super.new(data);
+
+		this.addr=addr;
+	endfunction
+
+	function void display();
+      $display("(Sub class a)The data is %0h and the addr is %0h",data,addr);
+	endfunction
+
+endclasss
+
 module tb;
 
 baseclass bc;
 subclass sc;
+subclass_a sca;
 
 initial begin
 	sc=new(16'hface,16'haaaa);
@@ -43,6 +59,11 @@ initial begin
 	bc.display(); // Dynamic Binding : child class display function is executed using the base class handle becz the method in baseclass is virtual
 	//$display("sub class  member accessed by parent class  handle, addr=%0d",bc.addr) // Even though a parent class handle can point to a child class object,
 	the child class data members cannot be accessed directly through the parent class handle.
+
+	sc=new(16'hfaaa,16'heeaa);
+	bc=sca; 
+	bc.display(); 
+
 end
 endmodule
 
