@@ -42,5 +42,6 @@ initial begin
 
 	sc=new(16'hfafa,16'haaaa);
 	sc.display();
+	bc.display();
 end
 endmodule
