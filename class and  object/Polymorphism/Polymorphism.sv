@@ -55,7 +55,7 @@ subclass_a sca;
 initial begin
 	sc=new(16'hface,16'haaaa);
 	bc=sc; //assign the subclass handle to the base class handle
-
+	// bc = subclass_a :: new();   which create the object for subclass_a without its handle..but the objects is pointed by the parent class handle
 	bc.display(); // Dynamic Binding : child class display function is executed using the base class handle becz the method in baseclass is virtual
 	//$display("sub class  member accessed by parent class  handle, addr=%0d",bc.addr) // Even though a parent class handle can point to a child class object,
 	the child class data members cannot be accessed directly through the parent class handle.
